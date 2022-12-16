@@ -9,7 +9,7 @@ Description=GPS Tracker
 
 [Service]
 Type=simple
-ExecStart=/bin/bash -c \"cd ~/.projects && source .venv/bin/activate && python3 main.py\"
+ExecStart=/bin/bash -c \"cd '$PWD' && source .venv/bin/activate && python3 main.py\"
 Restart=always
 RestartSec=5
 
