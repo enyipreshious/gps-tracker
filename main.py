@@ -29,9 +29,10 @@ if __name__ == "__main__":
             try:
                 position = getPositionData()
                 if (position):
-                    gps_variable.save_value({"value": 0, "context": { "lat": position[0], "lng": position[1]}})
+                    if not (position[0] == 0 and position[1] == 0):
+                        gps_variable.save_value({"value": 0, "context": { "lat": position[0], "lng": position[1]}})
             except gpsd.NoFixError:
-                print("GPS Positioning error")
+                print("Try re-positioning GPS")
                 
             time.sleep(0.1)
 
