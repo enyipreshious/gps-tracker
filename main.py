@@ -34,7 +34,7 @@ if __name__ == "__main__":
             except gpsd.NoFixError:
                 print("Try re-positioning GPS")
                 
-            time.sleep(0.1)
+            time.sleep(1)
 
     except (KeyboardInterrupt):
         RUNNING = False
